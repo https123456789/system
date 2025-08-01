@@ -3,7 +3,9 @@ README.md
 
 {{ if ne .chezmoi.os "linux" }}
 .config/nushell
+.config/metapac
 {{ end }}
 {{ if ne .chezmoi.os "windows" }}
-AppData/Roaming/nushell/
+AppData/Roaming/nushell
+AppData/Roaming/metapac
 {{ end }}
