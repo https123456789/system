@@ -1,3 +1,2 @@
-{{ if ne .chezmoi.os "windows" }}
-{{- template "nushell/config.nu" . -}}
-{{ end }}
+$env.config.buffer_editor = "nvim"
+$env.EDITOR = "nvim"

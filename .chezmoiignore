@@ -1,7 +1,8 @@
+notes.md
+
 {{ if ne .chezmoi.os "linux" }}
 .config/nushell
-#.config/nushell/config.nu
 {{ end }}
 {{ if ne .chezmoi.os "windows" }}
-AppData/Roaming/nushell/config.nu
+AppData/Roaming/nushell/
 {{ end }}
