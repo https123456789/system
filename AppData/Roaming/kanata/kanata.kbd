@@ -1,0 +1,12 @@
+(defcfg
+    process-unmapped-keys yes
+)
+
+(defsrc
+    grv
+)
+
+(deflayermap (default)
+    caps esc
+    esc caps
+)

@@ -1,5 +1,6 @@
 cargo = [
     "metapac",
+    "kanata",
 ]
 winget = [
     "Docker.DockerDesktop",
@@ -29,5 +30,9 @@ winget = [
     "Xmake-io.Xmake",
     "twpayne.chezmoi",
     "Ventoy.Ventoy",
+    "GOG.Galaxy",
+    "ItchIo.Itch",
+    "OpenWhisperSystems.Signal",
+    "Kitware.CMake",
 ]
 
