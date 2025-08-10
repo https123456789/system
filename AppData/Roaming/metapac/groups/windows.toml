@@ -3,6 +3,7 @@ cargo = [
     "kanata",
 ]
 winget = [
+    "LGUG2Z.komorebi",
     "Docker.DockerDesktop",
     "Git.Git",
     "GitHub.cli",
