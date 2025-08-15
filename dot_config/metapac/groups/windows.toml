@@ -20,7 +20,7 @@ winget = [
     "Modrinth.ModrinthApp",
     "Mozilla.Firefox",
     "Neovide.Neovide",
-    "Neovim.Neovim",
+    "Neovim.Neovim.Nightly",
     "Netsdk.S3Browser",
     "Nushell.Nushell",
     "Rustlang.Rustup",
