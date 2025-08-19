@@ -2,7 +2,7 @@
 
 ## Setup
 
-On any system, [`metapack`](https://github.com/ripytide/metapac) and [`chezmoi`](https://www.chezmoi.io) need to be installed.
+On any system, git needs to be installed so for cloning this repository. All other dependencies beyond that should be handled by the platform's corresponding init script.
 
 ## Windows
 
