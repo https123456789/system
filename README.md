@@ -13,3 +13,10 @@ On any system, git needs to be installed so for cloning this repository. All oth
   ```
   Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1
   ```
+
+### Git
+
+```
+git config --system core.longpaths true
+git config --global core.symlinks true
+```
