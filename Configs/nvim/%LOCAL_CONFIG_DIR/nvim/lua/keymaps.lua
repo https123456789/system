@@ -14,9 +14,12 @@ keymap("n", "<leader>tp", vim.cmd.tabprevious, { desc = "Previous tab" })
 keymap("n", "<leader>pu", vim.pack.update, { desc = "Update all plugins" })
 
 -- Pickers
-keymap("n", "<leader>ff", function()
+keymap("n", "<leader>pf", function()
     MiniPick.builtin.files({ tool = 'rg' })
 end, { desc = "Fuzzy find files" })
+keymap("n", "<leader>ph", function()
+    MiniPick.builtin.help()
+end, { desc = "Fuzzy find help" })
 
 -- File system management
 keymap("n", "<leader>nt", function()

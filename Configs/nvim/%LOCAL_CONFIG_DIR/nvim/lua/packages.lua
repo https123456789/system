@@ -4,6 +4,12 @@ vim.pack.add({
     "https://github.com/folke/which-key.nvim",
     "https://github.com/lukas-reineke/indent-blankline.nvim",
     "https://github.com/echasnovski/mini.pick",
+    "https://github.com/wakatime/vim-wakatime",
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+
+    -- LSP
+    "https://github.com/neovim/nvim-lspconfig",
+    "https://github.com/mason-org/mason.nvim",
 
     -- Dependencies
     "https://github.com/nvim-tree/nvim-web-devicons", -- which-key.nvim, mini.pick
@@ -11,48 +17,4 @@ vim.pack.add({
 
 vim.cmd("colorscheme catppuccin-mocha")
 
-require("oil").setup({
-    view_options = {
-        show_hidden = true
-    }
-})
-draw = {
-    delay = 20
-}
-require("which-key").setup({
-    preset = "modern",
-
-    win = {
-        no_overlap = true
-    }
-})
-require("ibl").setup({
-    scope = { enabled = false }
-})
-
-local picker_win_config = function()
-    local height = math.floor(0.618 * vim.opt.lines:get())
-    local width = math.floor(0.618 * vim.opt.columns:get())
-
-    return {
-        anchor = "NW",
-        height = height,
-        width = width,
-        row = math.floor(0.5 * (vim.opt.lines:get() - height)),
-        col = math.floor(0.5 * (vim.opt.columns:get() - width))
-    }
-end
-require("mini.pick").setup({
-    mappings = {
-        move_down = "<C-j>",
-        move_up = "<C-k>",
-    },
-
-    options = {
-        use_cache = true
-    },
-
-    window = {
-        config = picker_win_config
-    }
-})
+require("pkg-configs")

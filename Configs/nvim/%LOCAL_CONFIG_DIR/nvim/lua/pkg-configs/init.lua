@@ -1,0 +1,5 @@
+require("pkg-configs.nvim-treesitter")
+require("pkg-configs.mini-pick")
+require("pkg-configs.indent-blankline")
+require("pkg-configs.which-key")
+require("pkg-configs.oil")
