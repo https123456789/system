@@ -10,6 +10,14 @@ vim.pack.add({
     -- LSP
     "https://github.com/neovim/nvim-lspconfig",
     "https://github.com/mason-org/mason.nvim",
+    "https://github.com/mason-org/mason-lspconfig.nvim",
+
+    -- Completions
+    {
+        src = "https://github.com/saghen/blink.cmp",
+        version = "v1.6.0",
+        data = { build = { "cargo", "build", "-r" } }
+    },
 
     -- Dependencies
     "https://github.com/nvim-tree/nvim-web-devicons", -- which-key.nvim, mini.pick

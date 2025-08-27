@@ -14,7 +14,7 @@ opt.expandtab = true
 opt.hlsearch = false
 opt.incsearch = true
 
--- We want full color support
+-- Full color support
 opt.termguicolors = true
 
 opt.scrolloff = 8
@@ -23,6 +23,9 @@ opt.colorcolumn = "100"
 
 -- Make undo persistent
 opt.undofile = true
+
+-- Unix style is just nicer
+vim.o.fileformats = "unix,dos,mac"
 
 opt.signcolumn = "yes"
 
