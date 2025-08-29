@@ -11,27 +11,6 @@ autocmd("TextYankPost", {
     group = highlight_group,
 })
 
-function dumpTable(t, indent_level)
-    indent_level = indent_level or 0
-    local indent = string.rep("  ", indent_level) -- Two spaces per indent level
-
-    if type(t) ~= "table" then
-        print(indent .. tostring(t))
-        return
-    end
-
-    print(indent .. "{")
-    for k, v in pairs(t) do
-        print(indent .. "  [" .. tostring(k) .. "] = ")
-        if type(v) == "table" then
-            dumpTable(v, indent_level + 1)
-        else
-            print(tostring(v))
-        end
-    end
-    print(indent .. "}")
-end
-
 -- Package update/build hooks
 local packages_group = augroup("PackageUpdates", { clear = true })
 autocmd("PackChanged", {
@@ -40,7 +19,6 @@ autocmd("PackChanged", {
         local kind = ev.data.kind
         local spec = ev.data.spec
         local path = ev.data.path
-        print(spec.data.build)
 
         if not (kind == "install" or kind == "update") then
             return
@@ -52,6 +30,10 @@ autocmd("PackChanged", {
             end
         end
 
+        if spec.data == nil or spec.data.build == nil then
+            return
+        end
+
         vim.schedule(function()
             vim.system(spec.data.build, { cwd = path }, on_exit)
         end)
@@ -59,4 +41,13 @@ autocmd("PackChanged", {
         vim.notify(path .. " was " .. kind)
     end,
     group = packages_group
+})
+
+-- Terminals
+vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter", "TermOpen" }, {
+    callback = function(args)
+        if vim.startswith(vim.api.nvim_buf_get_name(args.buf), "term://") then
+            vim.cmd("startinsert")
+        end
+    end,
 })

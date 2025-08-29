@@ -27,7 +27,26 @@ opt.undofile = true
 -- Unix style is just nicer
 vim.o.fileformats = "unix,dos,mac"
 
+-- To avoid weird jitter when editing
 opt.signcolumn = "yes"
 
+-- Make the diagnostic symbols look nicer
+vim.diagnostic.config({
+    signs = {
+        -- active = true
+
+        text = {
+            [vim.diagnostic.severity.ERROR] = "✘",
+            [vim.diagnostic.severity.WARN] = "▲",
+            [vim.diagnostic.severity.HINT] = "⚑",
+            [vim.diagnostic.severity.INFO] = "»"
+        }
+    }
+})
+
+-- So that LSP hover windows are more easily distinguished from the rest of the page
+vim.o.winborder = "rounded"
+
+-- Leader key setup
 vim.g.mapleader = " "
 vim.g.leaderkey = " "

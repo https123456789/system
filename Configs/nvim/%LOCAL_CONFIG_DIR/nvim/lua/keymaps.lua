@@ -26,3 +26,16 @@ keymap("n", "<leader>nt", function()
     -- We do it this way so that there aren't a million errors on the first install
     require("oil").open_float()
 end, { desc = "Open a file tree editor" })
+
+-- Terminal workflow
+keymap("n", "<leader>tt", function()
+    local terminal = require("terminal")
+    terminal.run("")
+end)
+keymap("t", "<C-w>", "<C-\\><C-n><C-w>")
+
+-- LSP
+keymap("n", "<leader>gd", vim.lsp.buf.definition)
+keymap("n", "<leader>gs", vim.lsp.buf.declaration)
+keymap("n", "<leader>i", vim.lsp.buf.hover)
+keymap("n", "<leader>e", vim.diagnostic.open_float)

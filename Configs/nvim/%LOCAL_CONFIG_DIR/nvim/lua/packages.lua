@@ -6,6 +6,9 @@ vim.pack.add({
     "https://github.com/echasnovski/mini.pick",
     "https://github.com/wakatime/vim-wakatime",
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+    "https://github.com/rebelot/terminal.nvim",
+    "https://github.com/Bekaboo/deadcolumn.nvim",
+    "https://github.com/folke/lazydev.nvim",
 
     -- LSP
     "https://github.com/neovim/nvim-lspconfig",

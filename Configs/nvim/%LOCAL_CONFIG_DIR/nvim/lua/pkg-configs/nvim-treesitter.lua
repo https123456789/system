@@ -23,7 +23,7 @@ local ensure_installed = {
 local installed_langs = ts.get_installed()
 local missing_langs = {}
 
-for index, value in ipairs(ensure_installed) do
+for _, value in ipairs(ensure_installed) do
     if not containsValue(installed_langs, value) then
         table.insert(missing_langs, value)
     end
