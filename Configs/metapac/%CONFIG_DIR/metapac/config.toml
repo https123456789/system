@@ -1,0 +1,11 @@
+enabled_backends = ["winget", "arch", "cargo"]
+hostname_groups_enabled = true
+
+[arch]
+package_manager = "yay"
+
+[vscode]
+variant = "code"
+
+[hostname_groups]
+laptop-win = ["windows"]

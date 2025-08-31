@@ -27,7 +27,6 @@ winget = [
     "Nushell.Nushell",
     "Rustlang.Rustup",
     "TheDocumentFoundation.LibreOffice",
-    "WetOtter44.StrawberryMusicPlayer.MSVC",
     "Xmake-io.Xmake",
     "twpayne.chezmoi",
     "Ventoy.Ventoy",

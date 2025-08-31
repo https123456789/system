@@ -19,7 +19,7 @@ def protected_run [command expected_codes err_msg] {
 
     if $result not-in $expected_codes {
         pfail $err_msg
-        exit
+        exit 1
     }
 }
 
@@ -35,15 +35,18 @@ if $nu.os-info.family == "windows" {
 
     pstatus "Installing rustup"
     protected_run "winget install --id=Rustlang.Rustup -e" [0, -1978335189] "Failed to install rustup!"
+
+    let paths_cmd = r#'reg add "HKLM\\SYSTEM\\CurrentControlSet\\Control\\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f'#
+    protected_run $paths_cmd [0] "Failed to configure long paths!"
 } else if $nu.os-info.family == "linux" {
     pstatus "Linux system detected"
 
     # TODO: fix this
     pfail "Unsupported platform!"
-    exit
+    exit 1
 } else {
     pfail "Unsupported platform!"
-    exit
+    exit 1
 }
 
 pstatus "Defaulting to stable rust toolchain"
@@ -59,8 +62,14 @@ protected_run "cargo install metapac" [0] "Failed to install metapac!"
 
 source ~/.dotfiles/Configs/nushell/%CONFIG_DIR/nushell/config.nu
 
+# Basic environment
+
 protected_run "tuckr set nushell" [0] "Failed to setup nushell config!"
 protected_run "tuckr add nushell" [0] "Failed to setup nushell config!"
 
 protected_run "tuckr set metapac" [0] "Failed to setup metapac config!"
 protected_run "tuckr add metapac" [0] "Failed to setup metapac config!"
+
+# Install the universe
+
+protected_run "metapac sync -n" [0] "Failed to sync installed packages!"

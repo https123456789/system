@@ -8,15 +8,15 @@ On any system, git needs to be installed so for cloning this repository. All oth
 
 ### Windows
 
+```
+curl -o init.bat https://github.com/https123456789/system; init.bat
+```
+
 - In order to allow regular users to create symlinks, Developer Mode needs to be enabled in the Settings app.
 - Enable long paths:
   ```
   Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1
   ```
-
-```
-curl -o init.bat https://github.com/https123456789/system; init.bat
-`nushel``
 
 ### Git
 
