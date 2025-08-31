@@ -65,10 +65,8 @@ source ~/.dotfiles/Configs/nushell/%CONFIG_DIR/nushell/config.nu
 # Basic environment
 
 protected_run "tuckr set nushell" [0] "Failed to setup nushell config!"
-protected_run "tuckr add nushell" [0] "Failed to setup nushell config!"
-
 protected_run "tuckr set metapac" [0] "Failed to setup metapac config!"
-protected_run "tuckr add metapac" [0] "Failed to setup metapac config!"
+protected_run "tuckr set git" [0] "Failed to setup git config!"
 
 # Install the universe
 

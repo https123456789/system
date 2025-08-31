@@ -1,0 +1,11 @@
+[user]
+	name = Ben Landon
+	email = landb0x207@gmail.com
+[init]
+	defaultBranch = main
+[credential "https://git.b0x207.dev"]
+	provider = generic
+[core]
+	symlinks = true
+	autocrlf = false
+	longpaths = true
