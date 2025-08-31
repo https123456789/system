@@ -2,6 +2,7 @@ cargo = [
     "metapac",
     "tuckr",
     "tree-sitter-cli",
+    "kanata",
 ]
 winget = [
     "Docker.DockerDesktop",
