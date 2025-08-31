@@ -33,8 +33,13 @@ if $nu.os-info.family == "windows" {
     # This needs to happen as soon as possible so that `protected_run` functions properly
     $env.PATH ++= [ "~/.cargo/bin", "C:/Program Files/nu/bin" ]
 
+    pstatus "Installing MSVC"
+    protected_run "winget install --force --id=Microsoft.VisualStudio.2022.BuildTools -e" [0] "Failed to install MSVC!"
+    let vs_cmd = 'winget install Microsoft.VisualStudio.2022.Community --silent --override "--wait --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"'
+    # protected_run $vs_cmd [0] "Failed to install MSVC!"
+
     pstatus "Installing rustup"
-    protected_run "winget install --id=Rustlang.Rustup -e" [0, -1978335189] "Failed to install rustup!"
+    protected_run "winget install --force --id=Rustlang.Rustup -e" [0, -1978335189] "Failed to install rustup!"
 
     let paths_cmd = r#'reg add "HKLM\\SYSTEM\\CurrentControlSet\\Control\\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f'#
     protected_run $paths_cmd [0] "Failed to configure long paths!"
