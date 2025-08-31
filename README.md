@@ -11,5 +11,5 @@ On any system, git needs to be installed so for cloning this repository. All oth
 - In order to allow regular users to create symlinks, Developer Mode needs to be enabled in the Settings app.
 
 ```
-curl -o init.bat https://github.com/https123456789/system; init.bat
+curl -o init.bat https://raw.githubusercontent.com/https123456789/system/refs/heads/main/init.bat; init.bat
 ```
