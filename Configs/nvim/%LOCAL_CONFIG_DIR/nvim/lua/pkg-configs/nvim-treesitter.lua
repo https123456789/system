@@ -18,7 +18,8 @@ local ensure_installed = {
     "rust",
     "javascript",
     "zig",
-    "python"
+    "python",
+    "nu"
 }
 local installed_langs = ts.get_installed()
 local missing_langs = {}

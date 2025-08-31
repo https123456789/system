@@ -20,6 +20,9 @@ end, { desc = "Fuzzy find files" })
 keymap("n", "<leader>ph", function()
     MiniPick.builtin.help()
 end, { desc = "Fuzzy find help" })
+keymap("n", "<leader>pg", function()
+    MiniPick.builtin.grep_live()
+end, { desc = "Fuzzy find live grep" })
 
 -- File system management
 keymap("n", "<leader>nt", function()

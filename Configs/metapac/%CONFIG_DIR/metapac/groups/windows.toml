@@ -1,5 +1,7 @@
 cargo = [
     "metapac",
+    "tuckr",
+    "tree-sitter-cli",
 ]
 winget = [
     "Docker.DockerDesktop",
@@ -20,7 +22,7 @@ winget = [
     "Modrinth.ModrinthApp",
     "Mozilla.Firefox",
     "Neovide.Neovide",
-    "Neovim.Neovim.Nightly",
+    "Neovim.Neovim",
     "Netsdk.S3Browser",
     "Nushell.Nushell",
     "Rustlang.Rustup",
@@ -29,5 +31,11 @@ winget = [
     "Xmake-io.Xmake",
     "twpayne.chezmoi",
     "Ventoy.Ventoy",
+    "Cloudflare.cloudflared",
+    "Fastfetch-cli.Fastfetch",
+    "OpenWhisperSystems.Signal",
+    "Spotify.Spotify",
+    "Transmission.Transmission",
+    "zig.zig",
 ]
 

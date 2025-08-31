@@ -26,6 +26,7 @@ opt.undofile = true
 
 -- Unix style is just nicer
 vim.o.fileformats = "unix,dos,mac"
+vim.o.fileformat = "unix"
 
 -- To avoid weird jitter when editing
 opt.signcolumn = "yes"

@@ -10,3 +10,5 @@ if $nu.os-info.name == "windows" {
     # On unix systems, there is no need to differentiate between a "local" and "remote" config
     $env.LOCAL_CONFIG_DIR = $env.HOME + "/.config"
 }
+
+$env.PATH ++= [ "C:\\Program Files\\qemu" ]
