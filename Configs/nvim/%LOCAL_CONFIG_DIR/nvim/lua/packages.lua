@@ -9,6 +9,7 @@ vim.pack.add({
     "https://github.com/rebelot/terminal.nvim",
     "https://github.com/Bekaboo/deadcolumn.nvim",
     "https://github.com/folke/lazydev.nvim",
+    "https://github.com/j-hui/fidget.nvim",
 
     -- LSP
     "https://github.com/neovim/nvim-lspconfig",
