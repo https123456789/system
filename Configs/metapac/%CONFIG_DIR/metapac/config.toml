@@ -1,6 +1,9 @@
 enabled_backends = ["winget", "arch", "cargo"]
 hostname_groups_enabled = true
 
+[cargo]
+locked = true
+
 [arch]
 package_manager = "yay"
 
@@ -9,3 +12,4 @@ variant = "code"
 
 [hostname_groups]
 laptop-win = ["windows"]
+laptop = ["linux"]

@@ -43,12 +43,18 @@ if $nu.os-info.family == "windows" {
 
     let paths_cmd = r#'reg add "HKLM\\SYSTEM\\CurrentControlSet\\Control\\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f'#
     protected_run $paths_cmd [0] "Failed to configure long paths!"
-} else if $nu.os-info.family == "linux" {
+} else if $nu.os-info.name == "linux" {
     pstatus "Linux system detected"
 
-    # TODO: fix this
-    pfail "Unsupported platform!"
-    exit 1
+    $env.PATH ++= [ "~/.cargo/bin" ]
+
+    pstatus "Installing rustup"
+    protected_run "sudo pacman -S --needed --noconfirm rustup" [0] "Failed to install rustup!"
+
+    $env.CONFIG_DIR = ($env | get --optional XDG_CONFIG_DIR | default "~/.config")
+    $env.LOCAL_CONFIG_DIR = ($env | get --optional XDG_CONFIG_DIR | default "~/.config")
+
+    protected_run $"sudo chsh -s /usr/bin/nu (^whoami)" [0] "Failed to change default shell!"
 } else {
     pfail "Unsupported platform!"
     exit 1
@@ -69,9 +75,11 @@ source ~/.dotfiles/Configs/nushell/%CONFIG_DIR/nushell/config.nu
 
 # Basic environment
 
+protected_run "tuckr status" [0] "Failed basic tuckr sanity check!"
 protected_run "tuckr set nushell" [0] "Failed to setup nushell config!"
 protected_run "tuckr set metapac" [0] "Failed to setup metapac config!"
 protected_run "tuckr set git" [0] "Failed to setup git config!"
+protected_run "cd Configs; tuckr set *" [0] "Failed to setup git config!"
 
 # Install the universe
 

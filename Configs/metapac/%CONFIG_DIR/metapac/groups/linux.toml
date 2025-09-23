@@ -1,0 +1,52 @@
+cargo = [
+    "metapac",
+    "tuckr",
+    "tree-sitter-cli",
+    "kanata",
+]
+arch = [
+    # Foundations
+    "base",
+    "base-devel",
+    "git",
+    "efibootmgr",
+    "intel-ucode",
+    "linux",
+    "linux-firmware",
+    "networkmanager",
+    "sof-firmware",
+    "zram-generator",
+    "limine",
+    "limine-mkinitcpio-hook",
+    "openssh",
+
+    # Package management
+    "yay",
+
+    # Desktop environment
+    "hyprland",
+
+    # Bluetooth
+    "bluez",
+    "bluez-utils",
+
+    # Audio
+    "pipewire",
+    "wireplumber",
+    "gst-plugin-pipewire",
+    "libpulse",
+    "pipewire-alsa",
+    "pipewire-jack",
+    "pipewire-pulse",
+
+    # General
+    "nushell",
+    "btop",
+    "kitty",
+    "rustup",
+    "github-cli",
+    "firefox",
+    "fastfetch",
+    "ripgrep",
+    "neovim-nightly-bin"
+]
