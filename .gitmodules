@@ -1,0 +1,3 @@
+[submodule "Configs/hyprland_linux/%CONFIG_DIR/hypr/catppuccin-theme"]
+	path = Configs/hyprland_linux/%CONFIG_DIR/hypr/catppuccin-theme
+	url = https://github.com/catppuccin/hyprland

@@ -25,18 +25,16 @@ arch = [
 
     # Desktop environment
     "hyprland",
+    "keyd",
+    "quickshell",
 
     # Bluetooth
     "bluez",
     "bluez-utils",
 
     # Audio
-    "pipewire",
-    "wireplumber",
     "gst-plugin-pipewire",
-    "libpulse",
     "pipewire-alsa",
-    "pipewire-jack",
     "pipewire-pulse",
 
     # General
@@ -48,5 +46,7 @@ arch = [
     "firefox",
     "fastfetch",
     "ripgrep",
-    "neovim-nightly-bin"
+    "neovim-nightly-bin",
+    "rofi",
+    "rofi-calc"
 ]

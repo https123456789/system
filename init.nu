@@ -55,6 +55,12 @@ if $nu.os-info.family == "windows" {
     $env.LOCAL_CONFIG_DIR = ($env | get --optional XDG_CONFIG_DIR | default "~/.config")
 
     protected_run $"sudo chsh -s /usr/bin/nu (^whoami)" [0] "Failed to change default shell!"
+
+    protected_run "sudo groupadd --system uinput" [0] "Failed to create uinput group!"
+    protected_run $"sudo usermod -aG adm (^whoami)" [0] "Failed to add group!"
+    protected_run $"sudo usermod -aG uucp (^whoami)" [0] "Failed to add group!"
+    protected_run $"sudo usermod -aG input (^whoami)" [0] "Failed to add group!"
+    protected_run $"sudo usermod -aG uinput (^whoami)" [0] "Failed to add group!"
 } else {
     pfail "Unsupported platform!"
     exit 1
@@ -79,6 +85,11 @@ protected_run "tuckr status" [0] "Failed basic tuckr sanity check!"
 protected_run "tuckr set nushell" [0] "Failed to setup nushell config!"
 protected_run "tuckr set metapac" [0] "Failed to setup metapac config!"
 protected_run "tuckr set git" [0] "Failed to setup git config!"
+
+if $nu.os-info.name == "linux" {
+  protected_run "tuckr set --force --assume-yes hyprland_linux" [0] "Failed to setup hyprland!"
+}
+
 protected_run "cd Configs; tuckr set *" [0] "Failed to setup git config!"
 
 # Install the universe
