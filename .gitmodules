@@ -1,3 +1,6 @@
 [submodule "Configs/hyprland_linux/%CONFIG_DIR/hypr/catppuccin-theme"]
 	path = Configs/hyprland_linux/%CONFIG_DIR/hypr/catppuccin-theme
 	url = https://github.com/catppuccin/hyprland
+[submodule "Configs/wallpaper/%CONFIG_DIR/wallpaper/walls-catppuccin-mocha"]
+	path = Configs/wallpaper/%CONFIG_DIR/wallpaper/walls-catppuccin-mocha
+	url = https://github.com/orangci/walls-catppuccin-mocha

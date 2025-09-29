@@ -15,6 +15,7 @@ Scope {
             color: "transparent"
 
             property real radius: 13
+            property real borderWidth: 2
 
             anchors {
                 top: true
@@ -37,6 +38,8 @@ Scope {
                     Layout.fillHeight: true
                     radius: window.radius
                     color: Theme.base
+                    border.color: Theme.border
+                    border.width: window.borderWidth
 
                     ClockWidget {}
                 }
@@ -46,6 +49,8 @@ Scope {
                     Layout.fillHeight: true
                     radius: window.radius
                     color: Theme.base
+                    border.color: Theme.border
+                    border.width: window.borderWidth
 
                     WifiWidget {}
                 }
@@ -55,6 +60,8 @@ Scope {
                     Layout.alignment: Qt.AlignRight
                     radius: window.radius
                     color: Theme.base
+                    border.color: Theme.border
+                    border.width: window.borderWidth
 
                     VolumeWidget {}
                 }
@@ -64,6 +71,8 @@ Scope {
                     Layout.alignment: Qt.AlignRight
                     radius: window.radius
                     color: Theme.base
+                    border.color: Theme.border
+                    border.width: window.borderWidth
 
                     BatteryWidget {}
                 }
