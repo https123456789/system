@@ -32,8 +32,11 @@ end, { desc = "Open a file tree editor" })
 
 -- Terminal workflow
 keymap("n", "<leader>tt", function()
-    local terminal = require("terminal")
-    terminal.run("")
+    vim.cmd("belowright vsplit")
+    local win = vim.api.nvim_get_current_win()
+    local buf = vim.api.nvim_create_buf(true, true)
+    vim.api.nvim_win_set_buf(win, buf)
+    vim.cmd("terminal")
 end)
 keymap("t", "<C-w>", "<C-\\><C-n><C-w>")
 
