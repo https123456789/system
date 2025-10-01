@@ -1,3 +1,4 @@
+$env.config.show_banner = false
 $env.config.buffer_editor = "nvim"
 $env.EDITOR = "nvim"
 
@@ -14,3 +15,5 @@ if $nu.os-info.name == "windows" {
 
     $env.PATH ++= [ "~/.cargo/bin" ]
 }
+
+$env.PROMPT_COMMAND_RIGHT = date now | format date "%Y-%m-%d %H:%M"
