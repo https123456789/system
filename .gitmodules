@@ -4,3 +4,6 @@
 [submodule "Configs/wallpaper/%CONFIG_DIR/wallpaper/walls-catppuccin-mocha"]
 	path = Configs/wallpaper/%CONFIG_DIR/wallpaper/walls-catppuccin-mocha
 	url = https://github.com/orangci/walls-catppuccin-mocha
+[submodule "Configs/kitty_linux/%CONFIG_DIR/kitty/catppuccin-theme"]
+	path = Configs/kitty_linux/%CONFIG_DIR/kitty/catppuccin-theme
+	url = https://github.com/catppuccin/kitty

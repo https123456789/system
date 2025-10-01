@@ -27,6 +27,10 @@ vim.pack.add({
     "https://github.com/nvim-tree/nvim-web-devicons", -- which-key.nvim, mini.pick
 })
 
+require("catppuccin").setup({
+    transparent_background = true
+})
+
 vim.cmd("colorscheme catppuccin-mocha")
 
 require("pkg-configs")

@@ -43,6 +43,18 @@ Scope {
 
                     ClockWidget {}
                 }
+                Rectangle {
+                    Layout.minimumWidth: workspaceWidget.implicitWidth + 30
+                    Layout.fillHeight: true
+                    radius: window.radius
+                    color: Theme.base
+                    border.color: Theme.border
+                    border.width: window.borderWidth
+
+                    WorkspaceWidget {
+                        id: workspaceWidget
+                    }
+                }
                 SpacerWidget {}
                 Rectangle {
                     Layout.preferredWidth: 300
