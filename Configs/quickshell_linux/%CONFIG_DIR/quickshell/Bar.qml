@@ -34,7 +34,7 @@ Scope {
                 spacing: 6
 
                 Rectangle {
-                    Layout.preferredWidth: 250
+                    Layout.preferredWidth: 180
                     Layout.fillHeight: true
                     radius: window.radius
                     color: Theme.base
@@ -56,6 +56,16 @@ Scope {
                     }
                 }
                 SpacerWidget {}
+                Rectangle {
+                    Layout.preferredWidth: 300
+                    Layout.fillHeight: true
+                    radius: window.radius
+                    color: Theme.base
+                    border.color: Theme.border
+                    border.width: window.borderWidth
+
+                    TrayWidget {}
+                }
                 Rectangle {
                     Layout.preferredWidth: 300
                     Layout.fillHeight: true

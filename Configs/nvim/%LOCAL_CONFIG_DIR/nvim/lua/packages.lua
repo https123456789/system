@@ -25,6 +25,8 @@ vim.pack.add({
 
     -- Dependencies
     "https://github.com/nvim-tree/nvim-web-devicons", -- which-key.nvim, mini.pick
+
+    "https://github.com/RaafatTurki/hex.nvim",
 })
 
 require("catppuccin").setup({

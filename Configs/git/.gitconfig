@@ -1,6 +1,7 @@
 [user]
 	name = Ben Landon
 	email = landb0x207@gmail.com
+	signingkey = B8A6734A887A8CEE
 [init]
 	defaultBranch = main
 [credential "https://git.b0x207.dev"]
@@ -9,3 +10,7 @@
 	symlinks = true
 	autocrlf = false
 	longpaths = true
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true

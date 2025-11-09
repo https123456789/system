@@ -51,3 +51,11 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter", "TermOpen" }, {
         end
     end,
 })
+
+-- Set indentation to 2 spaces for certain file types
+augroup("setIndent", { clear = true })
+autocmd("Filetype", {
+  group = "setIndent",
+  pattern = { "nix" },
+  command = "setlocal shiftwidth=2 tabstop=2"
+})
