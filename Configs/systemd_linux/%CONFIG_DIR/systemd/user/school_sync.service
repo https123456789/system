@@ -1,0 +1,15 @@
+[Unit]
+Description=Schoolwork Backup Sync
+
+[Service]
+Environment=DISPLAY=:0
+Environment=HOME=/home/ben
+Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
+Type=simple
+ExecStart=rclone sync ~/backups/schoolwork uci_drive:schoolwork-backup
+Restart=no
+User=ben
+Group=ben
+
+[Install]
+WantedBy=default.target
